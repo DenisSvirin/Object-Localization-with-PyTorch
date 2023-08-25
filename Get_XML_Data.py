@@ -1,4 +1,7 @@
-imopr
+import cv2
+from xml.dom import minidom
+import pandas as pd
+import os
 
 def extract_info_from_xml(image, info):
     """
@@ -42,8 +45,8 @@ def xml_to_csv(image_directory, info_directory):
 
     data = []
     for _img_file, _info_file in zip(img_files, info_files):
-        img_path = image_dir + "/" + _img_file
-        info_path = info_dir + "/" + _info_file
+        img_path = image_directory + "/" + _img_file
+        info_path = info_directory + "/" + _info_file
 
         values = extract_info_from_xml(img_path, info_path)
 
